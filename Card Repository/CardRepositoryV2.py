@@ -7,8 +7,8 @@ from time import sleep
 # Manages Pandas for easy processing of the sheet data
 import pandas as pd
 # Authentication File Name
-import AuthFile
-#Global Debug Flag
+from AuthFile import AuthFile
+# Global Debug Flag
 Debug = True
 
 # Manages all the functionality for updating the sheet, 

@@ -5,7 +5,7 @@ import requests
 #Manages Sleep
 from time import sleep
 # Authentication File Name
-import AuthFile
+from AuthFile import AuthFile
 
 #Global Debug Flag
 Debug = True
