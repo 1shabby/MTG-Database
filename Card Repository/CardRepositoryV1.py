@@ -1,12 +1,11 @@
 #manages Google Sheets API
-from distutils.debug import DEBUG
-from re import M
-from urllib.parse import _NetlocResultMixinBase
 import gspread
 #Manages Generic HTTP requests
 import requests
 #Manages Sleep
 from time import sleep
+# Authentication File Name
+import AuthFile
 
 #Global Debug Flag
 Debug = True
@@ -57,7 +56,7 @@ class UpdateSheet:
     # Return none
     def OpenSheet(self):
         #Authorization
-        serviceAccount = gspread.service_account(filename="mtg-database-364703-802c3d8f67f4.json")
+        serviceAccount = gspread.service_account(filename=AuthFile.filename)
         #Open the spreadsheet
         sheet = serviceAccount.open("MTG Library")
         return sheet
