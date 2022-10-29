@@ -7,7 +7,9 @@ from time import sleep
 # Manages Pandas for easy processing of the sheet data
 import pandas as pd
 # Authentication File Name
-from AuthFile import AuthFile
+import sys
+sys.path.insert(1, '../AuthFile')
+import AuthFile
 # Global Debug Flag
 Debug = True
 
@@ -203,11 +205,11 @@ class UpdateSheet:
 RunUpdate = UpdateSheet()   
 RunUpdate.Calls = 0
 sheet = RunUpdate.OpenSheet() 
-RunUpdate.UpdatePlaneswalkerPrices(sheet)
-RunUpdate.UpdateLegendPrices(sheet)
-RunUpdate.UpdateGreenPrices(sheet)
-RunUpdate.UpdateBluePrices(sheet)
-RunUpdate.UpdateWhitePrices(sheet)
+# RunUpdate.UpdatePlaneswalkerPrices(sheet)
+# RunUpdate.UpdateLegendPrices(sheet)
+# RunUpdate.UpdateGreenPrices(sheet)
+# RunUpdate.UpdateBluePrices(sheet)
+# RunUpdate.UpdateWhitePrices(sheet)
 RunUpdate.UpdateLandPrices(sheet)
 RunUpdate.UpdateBulkPrices(sheet)
 RunUpdate.UpdateRedPrices(sheet)

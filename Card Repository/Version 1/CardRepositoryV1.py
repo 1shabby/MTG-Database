@@ -199,8 +199,8 @@ class UpdateSheet:
 RunUpdate = UpdateSheet()   
 RunUpdate.Calls = 0
 sheet = RunUpdate.OpenSheet() 
-# RunUpdate.UpdatePlaneswalkerPrices(sheet)
-# RunUpdate.UpdateLegendPrices(sheet)
-# RunUpdate.UpdateGreenPrices(sheet)
+RunUpdate.UpdatePlaneswalkerPrices(sheet)
+RunUpdate.UpdateLegendPrices(sheet)
+RunUpdate.UpdateGreenPrices(sheet)
 RunUpdate.UpdateBluePrices(sheet)
-#RunUpdate.UpdateLandPrices(sheet)
+RunUpdate.UpdateLandPrices(sheet)
