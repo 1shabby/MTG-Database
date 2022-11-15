@@ -118,10 +118,14 @@ class UpdateSheet:
             dict = self.SendRequest(url,row)
             # Get the price for the card from the dictionary
             price = self.GetPrice(row,dict)
+            # Get the image URI for the card from the dictionary
+            image = self.GetImageLink(row,dict)
             # Sets the previous price col to be the current price
             self.SetPreviousPrice(row)
             # Updates the price col to contain the price obtained from the dict
             self.UpdatePrice(row,price)
+            # Set the image uri if the image is an empty string currently
+            self.SetImage(row,image)
             # Mandatory 50 - 100 milliesecond wait between scryfall API calls
             sleep(0.1)
             row += 1
@@ -153,7 +157,19 @@ class UpdateSheet:
             print([row])
             retval = "bad url"
         return retval
-        
+
+    # Takes In a dictionary, and row
+    # Grab the image url if there is not currently an image in the record
+    # Return the image url
+    def GetImageLink(self,row,dict):
+        image = ""
+        try:
+            if(self.Data.loc[row,"Image"] == ""):
+                image = dict.get('data',{})[0].get('image_uris').get('normal')
+        except:
+            print("FAILED TO GET IMAGE FOR " + str(self.Data.loc[row,"Name"]).upper())
+        return image
+
     # Takes in a dictionary, foil and etched
     # Grab the price associated either foil, etched, or non-foil
     # Return the price of the card  
@@ -187,6 +203,13 @@ class UpdateSheet:
     def SetPreviousPrice(self,row):
         self.Data.loc[row,"Old Price"] = self.Data.loc[row,"Price"]
 
+    # Takes In the row and image
+    # Updates the image col to the image uri if empty
+    # No return
+    def SetImage(self,row,image):
+        if self.Data.loc[row,"Image"] == "":
+            self.Data.loc[row,"Image"] = image
+
     # Takes in the current row and the price for that row
     # Updates the price on the given row with the price given
     # No return; 
@@ -203,13 +226,12 @@ class UpdateSheet:
 
 
 RunUpdate = UpdateSheet()   
-RunUpdate.Calls = 0
 sheet = RunUpdate.OpenSheet() 
-# RunUpdate.UpdatePlaneswalkerPrices(sheet)
-# RunUpdate.UpdateLegendPrices(sheet)
-# RunUpdate.UpdateGreenPrices(sheet)
-# RunUpdate.UpdateBluePrices(sheet)
-# RunUpdate.UpdateWhitePrices(sheet)
+RunUpdate.UpdatePlaneswalkerPrices(sheet)
+RunUpdate.UpdateLegendPrices(sheet)
+RunUpdate.UpdateGreenPrices(sheet)
+RunUpdate.UpdateBluePrices(sheet)
+RunUpdate.UpdateWhitePrices(sheet)
 RunUpdate.UpdateLandPrices(sheet)
 RunUpdate.UpdateBulkPrices(sheet)
 RunUpdate.UpdateRedPrices(sheet)
