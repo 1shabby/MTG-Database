@@ -163,11 +163,21 @@ class UpdateSheet:
     # Return the image url
     def GetImageLink(self,row,dict):
         image = ""
-        try:
-            if(self.Data.loc[row,"Image"] == ""):
-                image = dict.get('data',{})[0].get('image_uris').get('normal')
-        except:
-            print("FAILED TO GET IMAGE FOR " + str(self.Data.loc[row,"Name"]).upper())
+        if(self.Data.loc[row,"Front Image"] == ""):
+            try:
+                    image = dict.get('data',{})[0].get('image_uris').get('normal')
+            except:
+                try:
+                    # Get the front side image
+                    image = dict.get('data',{})[0].get('card_faces',{})[0].get('image_uris').get('normal')
+                    # Set the front Side image
+                    self.Data.loc[row,"Front Image"] = image
+                    # Get the back side image
+                    image = dict.get('data',{})[0].get('card_faces',{})[1].get('image_uris').get('normal')
+                    # Set the back side image
+                    self.Data.loc[row,"Back Image"] = image
+                except:
+                    print("FAILED TO GET IMAGE FOR " + str(self.Data.loc[row,"Name"]).upper())
         return image
 
     # Takes in a dictionary, foil and etched
@@ -207,8 +217,8 @@ class UpdateSheet:
     # Updates the image col to the image uri if empty
     # No return
     def SetImage(self,row,image):
-        if self.Data.loc[row,"Image"] == "":
-            self.Data.loc[row,"Image"] = image
+        if self.Data.loc[row,"Front Image"] == "":
+            self.Data.loc[row,"Front Image"] = image
 
     # Takes in the current row and the price for that row
     # Updates the price on the given row with the price given
@@ -226,7 +236,7 @@ class UpdateSheet:
 
 
 RunUpdate = UpdateSheet()   
-sheet = RunUpdate.OpenSheet() 
+sheet = RunUpdate.OpenSheet()
 RunUpdate.UpdatePlaneswalkerPrices(sheet)
 RunUpdate.UpdateLegendPrices(sheet)
 RunUpdate.UpdateGreenPrices(sheet)
