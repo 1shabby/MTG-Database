@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "mtg-database-364703",
+  "private_key_id": "802c3d8f67f4540bcb2200f18b950c66ebce9b28",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQC5Mx2KxTr/D7bz\nQa1KZ4A/gLVxuES2SBdBT7q0H2AXCtmFEKQGQIdu50YujMhF6zsPbI/iRw63ssMV\nOFUnUGrMwp909qmtl5Tth8XtcyGUX1Q8Ve2yWEqe/zz28RbRUwG2riDIg+i7QXUQ\nmA8e/LYIgchg8+WLGmY5FviPWS2asNHr6nYDWVuDhkMNqWw6laeuQjr0RrDttYy3\njRsP7/abTgXtylaNUcxpvu+Cn1vyMVtNwQWjAs978kUEP0eODLwHSXiq6tppTayg\nV6eNZaPrUnV75U2N7E3dZnY+ukoaP3GVRy0gDeSea83ENdnWd7TxhNzinXJ1gCe1\n88740VDfAgMBAAECggEAQxcy3Qo9KJhLSQ1iVyFuktKwKH2+GqC8F/Nnqgfxufc6\nvJs+KGupBHKw+H0UskuYjipgZ3MhcEfIpz/MjVzzC7F3rZoL9vCCSZhVigMax5LP\nQ7pHTUPx6G6DadwFzZf593FWO/2ZSnjYjUXguHOJCETnz8ObRMyv+n+JVPjT7gT/\nxJZYO5WrU4XoSpHr7xInGRJ3j9wvQJ5ux4hxxY/E8P/rSI+30V+mmYO+nwIlV2+D\n02ds7Zv3S8B+u0DAcZNNl7FhXZAz2PivfULjFoqz7g0zjjgLkSnL+Eogd67qq6VC\nLDoZsoIwXmMRPv/Cz32csngeZ9bVHoCnKt3JrzsjOQKBgQD9Afkr4SIT98mVF47p\nKBVYXFLND8B8Zv/rApEATu//2zLHTd+z38+TP2QVFuYGTiJ7i3KSExiZjPfbgc+r\njLPAaq0qoqJTqqw/3Ep2ch7Wa/2SpUMgxQthEtpYYVi2SPKR7W15xKVIwyxVndZH\nxpwicycJtFPq3BmGagJPML+deQKBgQC7Y9dIjKHsIe2f7CCOQ9DAzoIiH65zZyKs\nhGD9lLmnkGC52c3Um0fbM8lAYrvOL7Uwza9bufVL4ow/8curvqBWFb6yKX++/cTY\nyH1v4+SX3cmdPHs9k5+xZKd25+VJG7UzAyae3lnSTwzx74KkyJhP/WJyW2fCfcW8\n7Afg2R/DFwKBgGeHJC+JWwlyrkDct/S+GyXh+VvBo1EEUJoYnb7Tji9SwY9+VRhk\nb6rgGJLsoMlZtZB6OjJ9r+Y9IbrnflPDKlaFEEDO9b9oqj0jZjDbd7Tj0YntJ+/D\n0WkybrgVdVh5txBxaAeYqM2CV6TdBi6unXsXRZUZ/fCviZ5PyIwg9Xd5AoGAf5/5\nMN0vLt7Qs1mjtqDzXU2Ijesb6lc042BpmmufokMPzaRMrl9vqhh0Gdjk5gHSGsIL\ni6J0MVHDiY2J1JfJJbg7n6Xp7k9xsN+jpwAEYXZZaTCXExIm8i+GatJ3c7peR7b+\np7byX+0c+O3SAZ7pNZlyYkZkva7hbNEocHgQTNMCgYEAhb0qwaQRFhKfD3fsS6mf\nvYesgaY5OQwEgPuO7n3fVuWdRIQ/QwgjC9YvK+sYTbEv9Uj+Mk4iFkrbxQ9wbODz\n6MVYrS0qZqYfhZBJGfjupmnbOWzDu87VADyQmib6bLLxN6e9QXxn2UOOZvR7hQIC\nvi+nFO+97KBVcpRwqPBdrnc=\n-----END PRIVATE KEY-----\n",
+  "client_email": "personal@mtg-database-364703.iam.gserviceaccount.com",
+  "client_id": "104602672186587978300",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/personal%40mtg-database-364703.iam.gserviceaccount.com"
+}
